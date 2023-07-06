@@ -6,11 +6,11 @@ namespace Assets
     {
         public Vector3 PlacePosition { get; set; }
         public bool IsParticleSelect { get; set; }
-        public float ExtremePointOfSpawnLeft;
-        public float ExtremePointOfSpawnRight;
-        public float ExtremePointOfSpawnTop;
-        public float ExtremePointOfSpawnBottom;
         [SerializeField] private Transform particleGenerationRing;
+        private float ExtremePointOfSpawnLeft;
+        private float ExtremePointOfSpawnRight;
+        private float ExtremePointOfSpawnTop;
+        private float ExtremePointOfSpawnBottom;
         protected bool isParticleOnGround;
         private IAttraction _attraction;
         private bool _canFunctionRun;

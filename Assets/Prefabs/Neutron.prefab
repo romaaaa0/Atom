@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1936760606215879835}
   - component: {fileID: 4428713771658559153}
   - component: {fileID: 4262936093572358508}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: Neutron
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,6 +109,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e97ea45fd3b7704c98586956c33434f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ExtremePointOfSpawnLeft: 0
+  ExtremePointOfSpawnRight: 0
+  ExtremePointOfSpawnTop: 0
+  ExtremePointOfSpawnBottom: 0
   particleGenerationRing: {fileID: 2515814442652123208, guid: ccc42c222a546a14cbaddd39491aae81, type: 3}
 --- !u!54 &4262936093572358508
 Rigidbody:

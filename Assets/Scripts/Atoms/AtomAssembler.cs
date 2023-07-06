@@ -11,7 +11,9 @@ namespace Assets
         [SerializeField] private GameObject core;
         [SerializeField] private Transform mainCamera;
         private IChoosing _choosing;
-        private IMoving _moving;
+        private IMoving _moveElectron;
+        private IMoving _moveNeutron;
+        private IMoving _moveProton;
         private IChecking _cheking;
         private IRotation _rotation;
         private IAttraction _attraction;
@@ -19,7 +21,9 @@ namespace Assets
         {
             new ChangeTypeOfAtom();
             _choosing = new ChoosingAtomicParticles(layerMaskAtom);
-            _moving = new MoveAtomicParticle(layerMaskGround);
+            _moveElectron = new MoveElectron(layerMaskGround);
+            _moveNeutron = new MoveNeutron(layerMaskGround);
+            _moveProton = new MoveProton(layerMaskGround);
             _cheking = new CheckingCorrenctnessAtom(orbits, core); 
             _rotation = new AtomRotation();
             _attraction = new ParticleAttraction();
@@ -27,7 +31,9 @@ namespace Assets
         private void Update()
         {
             _choosing.Choosing();
-            _moving.Moving();
+            _moveElectron.Moving();
+            _moveNeutron.Moving();
+            _moveProton.Moving();
             _cheking.Check();
             _rotation.Rotate(mainCamera);
             if (InformationAtom.IsAtomAssembled)

@@ -995,7 +995,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1381929272925288, guid: a4a755c01001f17429f9ba5774973b4f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1381929272925288, guid: a4a755c01001f17429f9ba5774973b4f, type: 3}
       propertyPath: m_TagString
@@ -1867,6 +1867,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Proton
       objectReference: {fileID: 0}
+    - target: {fileID: 5522259451273058931, guid: 78dc5cf9f4aaa65429f0497beee6d2d9, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5522259451273058931, guid: 78dc5cf9f4aaa65429f0497beee6d2d9, type: 3}
+      propertyPath: m_TagString
+      value: FirstProton
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -2903845952274653542, guid: 78dc5cf9f4aaa65429f0497beee6d2d9, type: 3}
     - {fileID: 6669197145340372379, guid: 78dc5cf9f4aaa65429f0497beee6d2d9, type: 3}
@@ -1928,10 +1936,10 @@ MonoBehaviour:
   - {fileID: 1502808687}
   layerMaskAtom:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 1024
   layerMaskGround:
     serializedVersion: 2
-    m_Bits: 192
+    m_Bits: 1088
   core: {fileID: 1614017574}
   mainCamera: {fileID: 204567003}
 --- !u!1 &1990545732

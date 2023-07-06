@@ -14,7 +14,6 @@ namespace Assets
         }
         public void Choosing()
         {
-
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out _hit, _distance, _layerMask))
             {

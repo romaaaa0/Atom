@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5959554776283351707}
   - component: {fileID: 3314024797868377526}
   - component: {fileID: -8974787774211133730}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: Electron
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,6 +109,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12a3a8b33ba1d7447bca3f121b193a75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ExtremePointOfSpawnLeft: 0
+  ExtremePointOfSpawnRight: 0
+  ExtremePointOfSpawnTop: 0
+  ExtremePointOfSpawnBottom: 0
   particleGenerationRing: {fileID: 4984930336253104770, guid: 5ca40634321f3f142a60b13a38fccf5b, type: 3}
 --- !u!54 &-8974787774211133730
 Rigidbody:

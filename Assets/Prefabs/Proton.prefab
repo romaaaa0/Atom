@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5522259451273058928}
   - component: {fileID: 6669197145340372379}
   - component: {fileID: -2903845952274653542}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: Proton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,6 +109,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93aaf76542654084591d26d9e419c9af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ExtremePointOfSpawnLeft: 0
+  ExtremePointOfSpawnRight: 0
+  ExtremePointOfSpawnTop: 0
+  ExtremePointOfSpawnBottom: 0
   particleGenerationRing: {fileID: 2515814442652123208, guid: 14917d424fc07f748bac3191688240fd, type: 3}
 --- !u!54 &-2903845952274653542
 Rigidbody:
