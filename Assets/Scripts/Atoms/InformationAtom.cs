@@ -9,6 +9,20 @@ namespace Assets
         public static bool IsParticleSelect { get; set; }
         public static bool IsAtomAssembled { get; set; }
         public static bool IsParticleOnGround { get; set; }
+        public static string AtomName { get; set; }
+        public static int AtomNumber
+        {
+            get { return _atomNumber; }
+            set
+            {
+                if (_atomNumber < 1 || _atomNumber > 118)
+                    throw new ArgumentException();
+                else
+                    _atomNumber = value;
+            }
+        }
+        private static int _atomNumber = 1;
+        public static string AtomMass { get; set; }
         public static int NumberProtons
         {
             get { return _numberProtons; }
@@ -56,7 +70,7 @@ namespace Assets
                     _numberMistakes = value;
             }
         }
-        public static int _numberMistakes;
+        private static int _numberMistakes;
         public static int RequiredNumberElectrons
         {
             get { return _requiredNumberElectrons; }
@@ -68,7 +82,7 @@ namespace Assets
                     _requiredNumberElectrons = value;
             }
         }
-        public static int _requiredNumberElectrons;
+        private static int _requiredNumberElectrons;
         public static int RequiredNumberProtons
         {
             get { return _requiredNumberProtons; }
@@ -80,7 +94,7 @@ namespace Assets
                     _requiredNumberProtons = value;
             }
         }
-        public static int _requiredNumberProtons;
+        private static int _requiredNumberProtons;
         public static int RequiredNumberNeutrons
         {
             get { return _requiredNumberNeutrons; }
@@ -92,7 +106,19 @@ namespace Assets
                     _requiredNumberNeutrons = value;
             }
         }
-        public static int _requiredNumberNeutrons;
+        private static int _requiredNumberNeutrons;
+        public static int HowManyOrbitsAdded
+        {
+            get { return _howManyOrbitsAdded; }
+            set
+            {
+                if (_howManyOrbitsAdded < 0 || _howManyOrbitsAdded > 3)
+                    throw new ArgumentException();
+                else
+                    _howManyOrbitsAdded = value;
+            }
+        }
+        private static int _howManyOrbitsAdded;
         public static Vector3 ParticlePlacePosition { get; set; }
         public static void Reset()
         {
@@ -100,6 +126,7 @@ namespace Assets
             NumberNeutrons = 0;
             NumberElectrons = 0;
             NumberMistakes = 0;
+            HowManyOrbitsAdded = 0;
             SelectedParticle = null;
             IsAtomAssembled = false;
         }

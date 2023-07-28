@@ -10,6 +10,13 @@ namespace Assets
         [SerializeField] private LayerMask layerMaskGround;
         [SerializeField] private GameObject core;
         [SerializeField] private Transform mainCamera;
+        [SerializeField] private Electron electron;
+        [SerializeField] private Proton proton;
+        [SerializeField] private Neutron neutron;
+        [SerializeField] private Transform electronGenerationRing;
+        [SerializeField] private Transform protonGenerationRing;
+        [SerializeField] private Transform neutronGenerationRing;
+        [SerializeField] private Transform folderLocation;
         private IChoosing _choosing;
         private IMoving _moveElectron;
         private IMoving _moveNeutron;
@@ -17,9 +24,9 @@ namespace Assets
         private IChecking _cheking;
         private IRotation _rotation;
         private IAttraction _attraction;
+        private ICreator _creator;
         private void Start()
         {
-            new ChangeTypeOfAtom();
             _choosing = new ChoosingAtomicParticles(layerMaskAtom);
             _moveElectron = new MoveElectron(layerMaskGround);
             _moveNeutron = new MoveNeutron(layerMaskGround);
@@ -27,6 +34,9 @@ namespace Assets
             _cheking = new CheckingCorrenctnessAtom(orbits, core); 
             _rotation = new AtomRotation();
             _attraction = new ParticleAttraction();
+            CreateElectron();
+            CreateNeutron();
+            CreateProton();
         }
         private void Update()
         {
@@ -40,11 +50,27 @@ namespace Assets
                 Invoke(nameof(LoadMenu), 2f);
             if(InformationAtom.SelectedParticle != null && InformationAtom.SelectedParticle.transform.position == InformationAtom.ParticlePlacePosition)
                 InformationAtom.SelectedParticle = null;
+            IsParticleOnGround.IsSelectParticleOnGround();
         }
         private void LoadMenu()
         {
             LoadScene.Menu();
             InformationAtom.Reset();
+        }
+        private void CreateElectron()
+        {
+            _creator = new ElectronCreator(electron, electronGenerationRing, folderLocation);
+            _creator.CreateParticle();
+        }
+        private void CreateProton()
+        {
+            _creator = new ProtonCreator(proton, protonGenerationRing, folderLocation);
+            _creator.CreateParticle();
+        }
+        private void CreateNeutron()
+        {
+            _creator = new NeutronCreator(neutron, neutronGenerationRing, folderLocation);
+            _creator.CreateParticle();
         }
     }
 }

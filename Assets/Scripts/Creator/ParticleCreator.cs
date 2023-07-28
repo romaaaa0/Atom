@@ -8,6 +8,7 @@ namespace Assets
         protected Transform particleGenerationRing;
         protected Transform folderLocation;
         protected T particle;
+        private float _offSet = 1f;
         public ParticleCreator(T particle, Transform particleGenerationRing, Transform folderLocation)
         {
             this.particle = particle;
@@ -17,19 +18,19 @@ namespace Assets
         public void CreateParticle()
         {
             var isPlaceAvaible = new Dictionary<Vector3, bool>();
-            var spawnPointRight = particleGenerationRing.position.x + (particleGenerationRing.localScale.x / 2);
-            var spawnPointLeft = particleGenerationRing.position.x - (particleGenerationRing.localScale.x / 2);
-            var spawnPointTop = particleGenerationRing.position.z + (particleGenerationRing.localScale.z / 2);
-            var spawnPointBottom = particleGenerationRing.position.z - (particleGenerationRing.localScale.z / 2);
+            var spawnPointRight = particleGenerationRing.position.x + (particleGenerationRing.localScale.x / 2) - _offSet;
+            var spawnPointLeft = particleGenerationRing.position.x - (particleGenerationRing.localScale.x / 2) + _offSet;
+            var spawnPointTop = particleGenerationRing.position.z + (particleGenerationRing.localScale.z / 2) + _offSet;
+            var spawnPointBottom = particleGenerationRing.position.z - (particleGenerationRing.localScale.z / 2) + _offSet;
             for (int i = 0; i < 20;)
             {
-                var xPosition = Random.Range(spawnPointLeft + 0.85f, spawnPointRight - 0.85f);
+                var xPosition = Random.Range(spawnPointLeft, spawnPointRight);
                 var yPosition = -4;
-                var zPosition = Random.Range(spawnPointBottom + 1f, spawnPointTop - 1f);
+                var zPosition = Random.Range(spawnPointBottom, spawnPointTop);
                 var position = new Vector3(xPosition, yPosition, zPosition);
                 if (isPlaceAvaible.ContainsKey(position) == false)
                 {
-                    MonoBehaviour.Instantiate(this.particle, position, Quaternion.identity, folderLocation);
+                    MonoBehaviour.Instantiate(particle, position, Quaternion.identity, folderLocation);
                     isPlaceAvaible.Add(position, true);
                     i++;
                 }

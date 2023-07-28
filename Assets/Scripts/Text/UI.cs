@@ -17,21 +17,25 @@ namespace Assets
         {
             Instance = this;
         }
+        private void Start()
+        {
+            FillParameters();
+        }
         private void Update()
+        {
+            CountParticles();
+        }
+        private void CountParticles()
         {
             proton.text = InformationAtom.NumberProtons.ToString();
             neutron.text = InformationAtom.NumberNeutrons.ToString();
             electron.text = InformationAtom.NumberElectrons.ToString();
             mistake.text = InformationAtom.NumberMistakes.ToString();
         }
-        public void CountParticles()
+        private void FillParameters()
         {
-
-        }
-        public void FillParameters(string atomName, string atomMass)
-        {
-            this.atomMass.text = atomMass;
-            this.atomName.text = atomName;
+            this.atomMass.text = InformationAtom.AtomMass;
+            this.atomName.text = InformationAtom.AtomName;
         }
         public void CompleteAtom()
         {

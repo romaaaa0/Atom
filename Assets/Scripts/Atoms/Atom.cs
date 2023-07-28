@@ -2,19 +2,22 @@
 
 namespace Assets
 {
-    public abstract class Atom
+    public abstract class Atom : MonoBehaviour
     {
-        public abstract string Name { get; }
-        public abstract string AtomicMass { get; }
-        public abstract int ContainsElectrons { get; }
-        public abstract int ContainsProtons { get; }
-        public abstract int ContainsNeutrons { get; } 
-        public Atom()
+        protected abstract string Name { get; }
+        protected abstract int Number { get; }
+        protected abstract string AtomMass { get; }
+        protected abstract int ContainsElectrons { get; }
+        protected abstract int ContainsProtons { get; }
+        protected abstract int ContainsNeutrons { get; } 
+        public void SetValues()
         {
             InformationAtom.RequiredNumberElectrons = ContainsElectrons;
             InformationAtom.RequiredNumberProtons = ContainsProtons;
             InformationAtom.RequiredNumberNeutrons = ContainsNeutrons;
-            UI.Instance.FillParameters(Name, AtomicMass);
+            InformationAtom.AtomName = Name;
+            InformationAtom.AtomMass = AtomMass;
+            InformationAtom.AtomNumber = Number;
         }
     }
 }

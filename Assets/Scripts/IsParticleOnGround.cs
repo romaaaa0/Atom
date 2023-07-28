@@ -2,9 +2,9 @@
 
 namespace Assets
 {
-    public class GroundCollision : MonoBehaviour
+    public static class IsParticleOnGround
     {
-        private void Update()
+        public static void IsSelectParticleOnGround()
         {
             if (InformationAtom.SelectedParticle == null) return;
             if (InformationAtom.SelectedParticle.transform.position.y > -2f)

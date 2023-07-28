@@ -3,10 +3,11 @@
     public class Helium : Atom
     {
         public Helium() : base() { }
-        public override string Name { get; } = "Helium";
-        public override string AtomicMass { get; } = "Atomic mass: 4.0026 u";
-        public override int ContainsElectrons { get; } = 2;
-        public override int ContainsProtons { get; } = 2;
-        public override int ContainsNeutrons { get; } = 2;
+        protected override string Name { get; } = "Helium";
+        protected override int Number { get; } = 2;
+        protected override string AtomMass { get; } = "Atomic mass: 4.0026 u";
+        protected override int ContainsElectrons { get; } = 2;
+        protected override int ContainsProtons { get; } = 2;
+        protected override int ContainsNeutrons { get; } = 2;
     }
 }
